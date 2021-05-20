@@ -20,8 +20,9 @@ export default function Form({currentId}) {
         e.preventDefault()
         currentId ?  dispatch(updatePost(currentId,postData)) : dispatch(createPost(postData))
     }
-    const clear = () =>{
-
+     const clear = () =>{
+        setCurrentId(null)
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
     }
     return (
         <Paper className={classes.paper}>
